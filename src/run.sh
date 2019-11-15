@@ -22,6 +22,22 @@ fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait lemma2verbis.fst |
 fstcompile --isymbols=syms.txt --osymbols=syms.txt  lemma2verbif.txt | fstarcsort > lemma2verbif.fst
 fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait lemma2verbif.fst | dot -Tpdf  > lemma2verbif.pdf
 
+#b6
+fstunion lemma2verbip.fst lemma2verbis.fst > lemma2verb1.fst
+fstunion lemma2verb1.fst lemma2verbif.fst > lemma2verb.fst
+
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait lemma2verb.fst | dot -Tpdf  > lemma2verb.pdf
+
+#b7
+fstunion lemma2noun.fst lemma2adverb.fst > lemma2word1.fst
+fstunion lemma2word1.fst lemma2verb.fst > lemma2word.fst
+
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait lemma2word.fst | dot -Tpdf  > lemma2word.pdf
+
+#c8
+fstinvert lemma2word.fst > word2lemma.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait word2lemma.fst | dot -Tpdf  > word2lemma.pdf
+
 
 ################### Testes ################
 #
@@ -32,10 +48,35 @@ fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait lemma2verbif.fst |
 fstcompile --isymbols=syms.txt --osymbols=syms.txt  ../test/a1/alunoFs.txt | fstarcsort > ../test/a1/alunoFs.fst
 fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/a1/alunoFs.fst | dot -Tpdf  > ../test/a1/alunoFs.pdf
 
+#Aluno MS
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  ../test/a1/alunoMs.txt | fstarcsort > ../test/a1/alunoMs.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/a1/alunoMs.fst | dot -Tpdf  > ../test/a1/alunoMs.pdf
+
+#Aluno MP
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  ../test/a1/alunoMp.txt | fstarcsort > ../test/a1/alunoMp.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/a1/alunoMp.fst | dot -Tpdf  > ../test/a1/alunoMp.pdf
+
+#Aluno FP
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  ../test/a1/alunoFp.txt | fstarcsort > ../test/a1/alunoFp.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/a1/alunoFp.fst | dot -Tpdf  > ../test/a1/alunoFp.pdf
+
+
 ##Compose
 #Aluno FS
 fstcompose ../test/a1/alunoFs.fst lemma2noun.fst > ../test/a1/out/alunoFsA1.fst
 fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/a1/out/alunoFsA1.fst | dot -Tpdf  > ../test/a1/out/alunoFsA1.pdf
+
+#Aluno MS
+fstcompose ../test/a1/alunoMs.fst lemma2noun.fst > ../test/a1/out/alunoMsA1.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/a1/out/alunoMsA1.fst | dot -Tpdf  > ../test/a1/out/alunoMsA1.pdf
+
+#Aluno MP
+fstcompose ../test/a1/alunoMp.fst lemma2noun.fst > ../test/a1/out/alunoMpA1.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/a1/out/alunoMpA1.fst | dot -Tpdf  > ../test/a1/out/alunoMpA1.pdf
+
+#Aluno FP
+fstcompose ../test/a1/alunoFp.fst lemma2noun.fst > ../test/a1/out/alunoFpA1.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/a1/out/alunoFpA1.fst | dot -Tpdf  > ../test/a1/out/alunoFpA1.pdf
 
 ###Test a4)
 ##Words
@@ -139,6 +180,136 @@ fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/a5/out/dei
 #Deitar IF 3P
 fstcompose ../test/a5/deitarIf3p.fst lemma2verbif.fst > ../test/a5/out/deitarIf3pA5.fst
 fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/a5/out/deitarIf3pA5.fst | dot -Tpdf  > ../test/a5/out/deitarIf3pA5.pdf
+
+###Test b6)
+##Compose
+
+#Deitar IS 1S
+fstcompose ../test/a4/deitarIs1s.fst lemma2verb.fst > ../test/b6/out/deitarIs1sb6.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b6/out/deitarIs1sb6.fst | dot -Tpdf  > ../test/b6/out/deitarIs1sb6.pdf
+
+#Deitar IS 3S
+fstcompose ../test/a4/deitarIs2s.fst lemma2verb.fst > ../test/b6/out/deitarIs2sb6.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b6/out/deitarIs2sb6.fst | dot -Tpdf  > ../test/b6/out/deitarIs2sb6.pdf
+
+#Deitar IS 3S
+fstcompose ../test/a4/deitarIs3s.fst lemma2verb.fst > ../test/b6/out/deitarIs3sb6.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b6/out/deitarIs3sb6.fst | dot -Tpdf  > ../test/b6/out/deitarIs3sb6.pdf
+
+#Deitar IS 1P
+fstcompose ../test/a4/deitarIs1p.fst lemma2verb.fst > ../test/b6/out/deitarIs1pb6.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b6/out/deitarIs1pb6.fst | dot -Tpdf  > ../test/b6/out/deitarIs1pb6.pdf
+
+#Deitar IS 2P
+fstcompose ../test/a4/deitarIs2p.fst lemma2verb.fst > ../test/b6/out/deitarIs2pb6.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b6/out/deitarIs2pb6.fst | dot -Tpdf  > ../test/b6/out/deitarIs2pb6.pdf
+
+#Deitar IS 3P
+fstcompose ../test/a4/deitarIs3p.fst lemma2verb.fst > ../test/b6/out/deitarIs3pb6.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b6/out/deitarIs3pb6.fst | dot -Tpdf  > ../test/b6/out/deitarIs3pb6.pdf
+
+#Deitar IF 1S
+fstcompose ../test/a5/deitarIf1s.fst lemma2verb.fst > ../test/b6/out/deitarIf1sb6.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b6/out/deitarIf1sb6.fst | dot -Tpdf  > ../test/b6/out/deitarIf1sb6.pdf
+
+#Deitar IF 3S
+fstcompose ../test/a5/deitarIf2s.fst lemma2verb.fst > ../test/b6/out/deitarIf2sb6.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b6/out/deitarIf2sb6.fst | dot -Tpdf  > ../test/b6/out/deitarIf2sb6.pdf
+
+#Deitar IF 3S
+fstcompose ../test/a5/deitarIf3s.fst lemma2verb.fst > ../test/b6/out/deitarIf3sb6.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b6/out/deitarIf3sb6.fst | dot -Tpdf  > ../test/b6/out/deitarIf3sb6.pdf
+
+#Deitar IF 1P
+fstcompose ../test/a5/deitarIf1p.fst lemma2verb.fst > ../test/b6/out/deitarIf1pb6.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b6/out/deitarIf1pb6.fst | dot -Tpdf  > ../test/b6/out/deitarIf1pb6.pdf
+
+#Deitar IF 2P
+fstcompose ../test/a5/deitarIf2p.fst lemma2verb.fst > ../test/b6/out/deitarIf2pb6.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b6/out/deitarIf2pb6.fst | dot -Tpdf  > ../test/b6/out/deitarIf2pb6.pdf
+
+#Deitar IF 3P
+fstcompose ../test/a5/deitarIf3p.fst lemma2verb.fst > ../test/b6/out/deitarIf3pb6.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b6/out/deitarIf3pb6.fst | dot -Tpdf  > ../test/b6/out/deitarIf3pb6.pdf
+
+##Test b7)
+##Compose
+
+#Aluno FS
+fstcompose ../test/a1/alunoFs.fst lemma2word.fst > ../test/b7/out/alunoFsb7.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/alunoFsb7.fst | dot -Tpdf  > ../test/b7/out/alunoFsb7.pdf
+
+#Aluno MS
+fstcompose ../test/a1/alunoMs.fst lemma2word.fst > ../test/b7/out/alunoMsb7.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/alunoMsb7.fst | dot -Tpdf  > ../test/b7/out/alunoMsb7.pdf
+
+#Aluno MP
+fstcompose ../test/a1/alunoMp.fst lemma2word.fst > ../test/b7/out/alunoMpb7.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/alunoMpb7.fst | dot -Tpdf  > ../test/b7/out/alunoMpb7.pdf
+
+#Aluno FP
+fstcompose ../test/a1/alunoFp.fst lemma2word.fst > ../test/b7/out/alunoFpb7.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/alunoFpb7.fst | dot -Tpdf  > ../test/b7/out/alunoFpb7.pdf
+
+#Deitar IS 1S
+fstcompose ../test/a4/deitarIs1s.fst lemma2word.fst > ../test/b7/out/deitarIs1sb7.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/deitarIs1sb7.fst | dot -Tpdf  > ../test/b7/out/deitarIs1sb7.pdf
+
+#Deitar IS 3S
+fstcompose ../test/a4/deitarIs2s.fst lemma2word.fst > ../test/b7/out/deitarIs2sb7.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/deitarIs2sb7.fst | dot -Tpdf  > ../test/b7/out/deitarIs2sb7.pdf
+
+#Deitar IS 3S
+fstcompose ../test/a4/deitarIs3s.fst lemma2word.fst > ../test/b7/out/deitarIs3sb7.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/deitarIs3sb7.fst | dot -Tpdf  > ../test/b7/out/deitarIs3sb7.pdf
+
+#Deitar IS 1P
+fstcompose ../test/a4/deitarIs1p.fst lemma2word.fst > ../test/b7/out/deitarIs1pb7.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/deitarIs1pb7.fst | dot -Tpdf  > ../test/b7/out/deitarIs1pb7.pdf
+
+#Deitar IS 2P
+fstcompose ../test/a4/deitarIs2p.fst lemma2word.fst > ../test/b7/out/deitarIs2pb7.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/deitarIs2pb7.fst | dot -Tpdf  > ../test/b7/out/deitarIs2pb7.pdf
+
+#Deitar IS 3P
+fstcompose ../test/a4/deitarIs3p.fst lemma2word.fst > ../test/b7/out/deitarIs3pb7.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/deitarIs3pb7.fst | dot -Tpdf  > ../test/b7/out/deitarIs3pb7.pdf
+
+#Deitar IF 1S
+fstcompose ../test/a5/deitarIf1s.fst lemma2word.fst > ../test/b7/out/deitarIf1sb7.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/deitarIf1sb7.fst | dot -Tpdf  > ../test/b7/out/deitarIf1sb7.pdf
+
+#Deitar IF 3S
+fstcompose ../test/a5/deitarIf2s.fst lemma2word.fst > ../test/b7/out/deitarIf2sb7.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/deitarIf2sb7.fst | dot -Tpdf  > ../test/b7/out/deitarIf2sb7.pdf
+
+#Deitar IF 3S
+fstcompose ../test/a5/deitarIf3s.fst lemma2word.fst > ../test/b7/out/deitarIf3sb7.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/deitarIf3sb7.fst | dot -Tpdf  > ../test/b7/out/deitarIf3sb7.pdf
+
+#Deitar IF 1P
+fstcompose ../test/a5/deitarIf1p.fst lemma2word.fst > ../test/b7/out/deitarIf1pb7.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/deitarIf1pb7.fst | dot -Tpdf  > ../test/b7/out/deitarIf1pb7.pdf
+
+#Deitar IF 2P
+fstcompose ../test/a5/deitarIf2p.fst lemma2word.fst > ../test/b7/out/deitarIf2pb7.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/deitarIf2pb7.fst | dot -Tpdf  > ../test/b7/out/deitarIf2pb7.pdf
+
+#Deitar IF 3P
+fstcompose ../test/a5/deitarIf3p.fst lemma2word.fst > ../test/b7/out/deitarIf3pb7.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/deitarIf3pb7.fst | dot -Tpdf  > ../test/b7/out/deitarIf3pb7.pdf
+
+##c8
+#Words
+#Aluno FP
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  ../test/c8/alunas.txt | fstarcsort > ../test/c8/alunas.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/c8/alunas.fst | dot -Tpdf  > ../test/c8/alunas.pdf
+
+
+##Compose
+#Aluno FS
+fstcompose ../test/c8/alunas.fst word2lemma.fst > ../test/c8/out/alunasc8.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/c8/out/alunasc8.fst | dot -Tpdf  > ../test/c8/out/alunasc8.pdf
 
 
 ################### Testa os tradutores ################
