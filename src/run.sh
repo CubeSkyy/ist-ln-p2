@@ -1,29 +1,55 @@
 #!/bin/bash
 
-################### letras ################
+################### TRANSDUCERS a)################
 #
-# Compila e gera a versão gráfica do transdutor que tem "potato"
+# 
 fstcompile --isymbols=syms.txt --osymbols=syms.txt  lemma2noun.txt | fstarcsort > lemma2noun.fst
 fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait lemma2noun.fst | dot -Tpdf  > lemma2noun.pdf
 
-fstcompile --isymbols=syms.txt --osymbols=syms.txt  ../test/aluno.txt | fstarcsort > ../test/aluno.fst
-fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/aluno.fst | dot -Tpdf  > aluno.pdf
-
-fstcompose ../test/aluno.fst lemma2noun.fst > ../test/aluno2a.fst
-fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/aluno2a.fst | dot -Tpdf  > ../test/aluno2a.pdf
-#fstcompile --isymbols=letras.sym --osymbols=letras.sym  cabbage.txt | fstarcsort > cabbage.fst
-#fstdraw    --isymbols=letras.sym --osymbols=letras.sym --portrait cabbage.fst | dot -Tpdf  > cabbage.pdf
-
-#fstcompile --isymbols=letras.sym --osymbols=letras.sym  onion.txt | fstarcsort > onion.fst
-#fstdraw    --isymbols=letras.sym --osymbols=letras.sym --portrait onion.fst | dot -Tpdf  > onion.pdf
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  lemma2verbis.txt | fstarcsort > lemma2verbis.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait lemma2verbis.fst | dot -Tpdf  > lemma2verbis.pdf
 
 
-################### Tradutores de tradução ################
+################### Testes ################
 #
-# Compila e gera a versão gráfica do transdutor que traduz letra a letra
-#fstcompile --isymbols=letras.sym --osymbols=letras.sym trad.txt | fstarcsort > trad.fst
-#fstdraw    --isymbols=letras.sym --osymbols=letras.sym --portrait trad.fst | dot -Tpdf  > trad.pdf
+#
+###Test a1)
+##Words
+#Aluno FS
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  ../test/a1/alunoFs.txt | fstarcsort > ../test/a1/alunoFs.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/a1/alunoFs.fst | dot -Tpdf  > ../test/a1/alunoFs.pdf
 
+##Compose
+#Aluno FS
+fstcompose ../test/a1/alunoFs.fst lemma2noun.fst > ../test/a1/out/alunoFsA1.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/a1/out/alunoFsA1.fst | dot -Tpdf  > ../test/a1/out/alunoFsA1.pdf
+
+###Test a4)
+##Words
+#Deitar IS 1S
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  ../test/a4/deitarIs1s.txt | fstarcsort > ../test/a4/deitarIs1s.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/a4/deitarIs1s.fst | dot -Tpdf  > ../test/a4/deitarIs1s.pdf
+
+#Deitar IS 3S
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  ../test/a4/deitarIs3s.txt | fstarcsort > ../test/a4/deitarIs3s.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/a4/deitarIs3s.fst | dot -Tpdf  > ../test/a4/deitarIs3s.pdf
+
+#Deitar IS 1P
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  ../test/a4/deitarIs1p.txt | fstarcsort > ../test/a4/deitarIs1p.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/a4/deitarIs1p.fst | dot -Tpdf  > ../test/a4/deitarIs1p.pdf
+
+##Compose
+#Deitar IS 1S
+fstcompose ../test/a4/deitarIs1s.fst lemma2verbis.fst > ../test/a4/out/deitarIs1sA4.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/a4/out/deitarIs1sA4.fst | dot -Tpdf  > ../test/a4/out/deitarIs1sA4.pdf
+
+#Deitar IS 3S
+fstcompose ../test/a4/deitarIs3s.fst lemma2verbis.fst > ../test/a4/out/deitarIs3sA4.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/a4/out/deitarIs3sA4.fst | dot -Tpdf  > ../test/a4/out/deitarIs3sA4.pdf
+
+#Deitar IS 1P
+fstcompose ../test/a4/deitarIs1p.fst lemma2verbis.fst > ../test/a4/out/deitarIs1pA4.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/a4/out/deitarIs1pA4.fst | dot -Tpdf  > ../test/a4/out/deitarIs1pA4.pdf
 
 ################### Testa os tradutores ################
 #
