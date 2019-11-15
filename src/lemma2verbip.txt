@@ -36,12 +36,12 @@
 4 100 +1s o
 4 6 eps a
 6 100 +2s s
-6 100 +3s eps 
-6 100 +2p s
+6 100 +3s eps
+6 9 +2p i
+9 100 eps s
 6 100 +3p m
-6 7 +1p m 
+6 7 +1p m
 7 8 eps o
 8 100 eps s
 
 100
-
