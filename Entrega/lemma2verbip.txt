@@ -26,22 +26,22 @@
 0 0 z z
 0 0 á á
 0 0 ã ã
-0 1 a a
-1 2 r r
+
+0 1 a eps
+1 2 r eps
 2 3 +V eps
-3 4 +if eps
-4 5 +1s e
-5 6 eps i
-4 7 +2s á
-7 6 eps s
-4 6 +3s á
-4 8 +1p e
-8 9 eps m
-9 10 eps o
-10 6 eps s
-4 11 +2p e
-11 12 eps i
-12 6 eps s
-4 13 +3p ã
-13 6 eps o
-6
+3 4 +ip eps
+
+
+4 100 +1s o
+4 6 eps a
+6 100 +2s s
+6 100 +3s eps
+6 9 +2p i
+9 100 eps s
+6 100 +3p m
+6 7 +1p m
+7 8 eps o
+8 100 eps s
+
+100
