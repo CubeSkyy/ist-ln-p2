@@ -1,5 +1,9 @@
 #!/bin/bash
 
+mkdir -p FINALtransducers
+mkdir -p FINALpdf
+mkdir -p FINALexamples
+
 ################### TRANSDUCERS a)################
 #
 #a1
