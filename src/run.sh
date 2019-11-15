@@ -427,6 +427,72 @@ fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/c8/alunas.
 fstcompose ../test/c8/alunas.fst word2lemma.fst > ../test/c8/out/alunasc8.fst
 fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/c8/out/alunasc8.fst | dot -Tpdf  > ../test/c8/out/alunasc8.pdf
 
+#Words
+#Aluno FP
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  ../test/c8/bernardo.txt | fstarcsort > ../test/c8/bernardo.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/c8/bernardo.fst | dot -Tpdf  > ../test/c8/bernardo.pdf
+
+
+##Compose
+#Aluno FS
+fstcompose ../test/c8/bernardo.fst word2lemma.fst > ../test/c8/out/bernardoc8.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/c8/out/bernardoc8.fst | dot -Tpdf  > ../test/c8/out/bernardoc8.pdf
+
+#Words
+#Aluno FP
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  ../test/c8/espirrastes.txt | fstarcsort > ../test/c8/espirrastes.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/c8/espirrastes.fst | dot -Tpdf  > ../test/c8/espirrastes.pdf
+
+
+##Compose
+#Aluno FS
+fstcompose ../test/c8/espirrastes.fst word2lemma.fst > ../test/c8/out/espirrastesc8.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/c8/out/espirrastesc8.fst | dot -Tpdf  > ../test/c8/out/espirrastesc8.pdf
+
+#Words
+#Aluno FP
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  ../test/c8/baratas.txt | fstarcsort > ../test/c8/baratas.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/c8/baratas.fst | dot -Tpdf  > ../test/c8/baratas.pdf
+
+
+##Compose
+#Aluno FS
+fstcompose ../test/c8/baratas.fst word2lemma.fst > ../test/c8/out/baratasc8.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/c8/out/baratasc8.fst | dot -Tpdf  > ../test/c8/out/baratasc8.pdf
+
+#Words
+#Aluno FP
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  ../test/c8/falarei.txt | fstarcsort > ../test/c8/falarei.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/c8/falarei.fst | dot -Tpdf  > ../test/c8/falarei.pdf
+
+
+##Compose
+#Aluno FS
+fstcompose ../test/c8/falarei.fst word2lemma.fst > ../test/c8/out/falareic8.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/c8/out/falareic8.fst | dot -Tpdf  > ../test/c8/out/falareic8.pdf
+
+#Words
+#Aluno FP
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  ../test/c8/hábilmente.txt | fstarcsort > ../test/c8/hábilmente.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/c8/hábilmente.fst | dot -Tpdf  > ../test/c8/hábilmente.pdf
+
+
+##Compose
+#Aluno FS
+fstcompose ../test/c8/hábilmente.fst word2lemma.fst > ../test/c8/out/hábilmentec8.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/c8/out/hábilmentec8.fst | dot -Tpdf  > ../test/c8/out/hábilmentec8.pdf
+
+#Words
+#Aluno FP
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  ../test/c8/trabalhou.txt | fstarcsort > ../test/c8/trabalhou.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/c8/trabalhou.fst | dot -Tpdf  > ../test/c8/trabalhou.pdf
+
+
+##Compose
+#Aluno FS
+fstcompose ../test/c8/trabalhou.fst word2lemma.fst > ../test/c8/out/trabalhouc8.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/c8/out/trabalhouc8.fst | dot -Tpdf  > ../test/c8/out/trabalhouc8.pdf
+
 
 ################### Testa os tradutores ################
 #
