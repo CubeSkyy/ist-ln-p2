@@ -1,3 +1,4 @@
+0 0 a a
 0 0 b b
 0 0 c c
 0 0 d d
@@ -25,12 +26,22 @@
 0 0 z z
 0 0 á á
 0 0 ã ã
+
 0 1 a eps
 1 2 r eps
 2 3 +V eps
 3 4 +ip eps
-4 5 +2s eps
+
+
+4 100 +1s o
 5 6 eps a
-6 7 eps s
-7
+6 100 +2s s
+6 100 +3s eps 
+6 100 +2p s
+6 100 +3p m
+6 7 +1p m 
+7 8 eps o
+8 100 eps s
+
+100
 
