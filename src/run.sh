@@ -129,8 +129,6 @@ fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/a3/out/dei
 fstcompose ../test/a3/deitarIp3p.fst lemma2verbip.fst > ../test/a3/out/deitarIp3pA3.fst
 fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/a3/out/deitarIp3pA3.fst | dot -Tpdf  > ../test/a3/out/deitarIp3pA3.pdf
 
-
-
 ###Test a4)
 ##Words
 #Deitar IS 1S
