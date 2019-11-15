@@ -78,6 +78,17 @@ fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/a1/out/alu
 fstcompose ../test/a1/alunoFp.fst lemma2noun.fst > ../test/a1/out/alunoFpA1.fst
 fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/a1/out/alunoFpA1.fst | dot -Tpdf  > ../test/a1/out/alunoFpA1.pdf
 
+###Test a2)
+##Words
+#incrivelmente ADV
+fstcompile --isymbols=syms.txt --osymbols=syms.txt  ../test/a2/incrivelmenteADV.txt | fstarcsort > ../test/a2/incrivelmenteADV.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/a2/incrivelmenteADV.fst | dot -Tpdf  > ../test/a2/incrivelmenteADV.pdf
+
+##Compose
+#incrivelmente ADV
+fstcompose ../test/a2/incrivelmenteADV.fst lemma2adverb.fst > ../test/a2/out/incrivelmenteADVA2.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/a2/out/incrivelmenteADVA2.fst | dot -Tpdf  > ../test/a2/out/incrivelmenteADVA2.pdf
+
 ###Test a3)
 ##Words
 #Deitar IP 1S
