@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 ################### letras ################
 #
 # Compila e gera a versão gráfica do transdutor que tem "potato"
