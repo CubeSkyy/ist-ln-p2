@@ -237,6 +237,31 @@ fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/a5/out/dei
 ###Test b6)
 ##Compose
 
+#Deitar IP 1S
+fstcompose ../test/a3/deitarIp1s.fst lemma2verb.fst > ../test/b6/out/deitarIp1sb6.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b6/out/deitarIp1sb6.fst | dot -Tpdf  > ../test/b6/out/deitarIp1sb6.pdf
+
+#Deitar IP 3S
+fstcompose ../test/a3/deitarIp2s.fst lemma2verb.fst > ../test/b6/out/deitarIp2sb6.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b6/out/deitarIp2sb6.fst | dot -Tpdf  > ../test/b6/out/deitarIp2sb6.pdf
+
+#Deitar IP 3S
+fstcompose ../test/a3/deitarIp3s.fst lemma2verb.fst > ../test/b6/out/deitarIp3sb6.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b6/out/deitarIp3sb6.fst | dot -Tpdf  > ../test/b6/out/deitarIp3sb6.pdf
+
+#Deitar IP 1P
+fstcompose ../test/a3/deitarIp1p.fst lemma2verb.fst > ../test/b6/out/deitarIp1pb6.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b6/out/deitarIp1pb6.fst | dot -Tpdf  > ../test/b6/out/deitarIp1pb6.pdf
+
+#Deitar IP 2P
+fstcompose ../test/a3/deitarIp2p.fst lemma2verb.fst > ../test/b6/out/deitarIp2pb6.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b6/out/deitarIp2pb6.fst | dot -Tpdf  > ../test/b6/out/deitarIp2pb6.pdf
+
+#Deitar IP 3P
+fstcompose ../test/a3/deitarIp3p.fst lemma2verb.fst > ../test/b6/out/deitarIp3pb6.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b6/out/deitarIp3pb6.fst | dot -Tpdf  > ../test/b6/out/deitarIp3pb6.pdf
+
+
 #Deitar IS 1S
 fstcompose ../test/a4/deitarIs1s.fst lemma2verb.fst > ../test/b6/out/deitarIs1sb6.fst
 fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b6/out/deitarIs1sb6.fst | dot -Tpdf  > ../test/b6/out/deitarIs1sb6.pdf
@@ -303,6 +328,30 @@ fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/alu
 #Aluno FP
 fstcompose ../test/a1/alunoFp.fst lemma2word.fst > ../test/b7/out/alunoFpb7.fst
 fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/alunoFpb7.fst | dot -Tpdf  > ../test/b7/out/alunoFpb7.pdf
+
+#Deitar IP 1S
+fstcompose ../test/a3/deitarIp1s.fst lemma2word.fst > ../test/b7/out/deitarIp1sb7.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/deitarIp1sb7.fst | dot -Tpdf  > ../test/b7/out/deitarIp1sb7.pdf
+
+#Deitar IP 2S
+fstcompose ../test/a3/deitarIp2s.fst lemma2word.fst > ../test/b7/out/deitarIp2sb7.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/deitarIp2sb7.fst | dot -Tpdf  > ../test/b7/out/deitarIp2sb7.pdf
+
+#Deitar IP 3S
+fstcompose ../test/a3/deitarIp3s.fst lemma2word.fst > ../test/b7/out/deitarIp3sb7.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/deitarIp3sb7.fst | dot -Tpdf  > ../test/b7/out/deitarIp3sb7.pdf
+
+#Deitar IP 1P
+fstcompose ../test/a3/deitarIp1p.fst lemma2word.fst > ../test/b7/out/deitarIp1pb7.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/deitarIp1pb7.fst | dot -Tpdf  > ../test/b7/out/deitarIp1pb7.pdf
+
+#Deitar IP 2P
+fstcompose ../test/a3/deitarIp2p.fst lemma2word.fst > ../test/b7/out/deitarIp2pb7.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/deitarIp2pb7.fst | dot -Tpdf  > ../test/b7/out/deitarIp2pb7.pdf
+
+#Deitar IP 3P
+fstcompose ../test/a3/deitarIp3p.fst lemma2word.fst > ../test/b7/out/deitarIp3pb7.fst
+fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/deitarIp3pb7.fst | dot -Tpdf  > ../test/b7/out/deitarIp3pb7.pdf
 
 #Deitar IS 1S
 fstcompose ../test/a4/deitarIs1s.fst lemma2word.fst > ../test/b7/out/deitarIs1sb7.fst
