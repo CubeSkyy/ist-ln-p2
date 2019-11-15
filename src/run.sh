@@ -414,7 +414,6 @@ fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/dei
 #Deitar IF 3P
 fstcompose ../test/a5/deitarIf3p.fst lemma2word.fst > ../test/b7/out/deitarIf3pb7.fst
 fstdraw    --isymbols=syms.txt --osymbols=syms.txt --portrait ../test/b7/out/deitarIf3pb7.fst | dot -Tpdf  > ../test/b7/out/deitarIf3pb7.pdf
-
 ##c8
 #Words
 #Aluno FP
